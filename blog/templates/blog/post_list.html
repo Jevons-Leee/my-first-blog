@@ -2,23 +2,17 @@
     <head>
         <title>Jevons's blog</title>
     </head>
-    <body>
-        <div>
-            <h1><a href="">Jevons's blog</a></h1>
-        </div>
-		
-		 <div>
-            published: 12.06.2020, 15:13</p>
-			<h2><a href="">The city I most wang to go</a></h2>
-			<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eg
-			et metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-		<div>
-		
-		<div>
-			published: 11.06.2020, 10:50</p>
-			<h2><a href="">The foods I most wang to eat</a></h2>
-			<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eg
-			et metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-		<div>
-	</body>
+		<body>
+			<div>
+				<h1><a href="/">Django Girls Blog</a></h1>
+			</div>
+
+			{% for post in posts %}
+			<div>
+				<p>published: {{ post.published_date }}</p>
+				<h1><a href="">{{ post.title }}</a></h1>
+				<p>{{ post.text|linebreaksbr }}</p>
+			</div>
+		{% endfor %}
+		</body>
 </html>		
